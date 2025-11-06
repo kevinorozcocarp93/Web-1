@@ -33,18 +33,19 @@ main {
   padding: 20px;
 }
 
-.carrousel img {
-  width: 600px;         
-  height: 350px;        
-  object-fit: cover;    
-  border-radius: 10px;
-  box-shadow: 0 0 5px gray;
+.carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .carrousel img {
-  width: 70%;
-  max-height: 400px;
+  width: 600px;         /* ancho fijo */
+  height: 350px;        /* alto fijo */
+  object-fit: cover;    /* evita deformación */
   border-radius: 10px;
+  box-shadow: 0 0 5px gray;
 }
 
 .btn {
