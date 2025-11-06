@@ -1,254 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contacto con Galería</title>
-
-<style>
-  :root{
-    --bg:#0f172a;      /* fondo general */
-    --card:#111827;    /* paneles */
-    --accent:#22d3ee;  /* celestito */
-    --text:#e5e7eb;    /* texto */
-    --muted:#94a3b8;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; font-family:system-ui,Segoe UI,Roboto,Arial;
-    background:var(--bg); color:var(--text);
-  }
-
-  /* ====== LAYOUT ====== */
-  .wrap{
-    min-height:100vh;
-    display:flex;
-    gap:24px;
-    padding:24px;
-  }
-  /* izquierda: imágenes */
-  #panel-imagenes{
-    flex: 0 1 60%;   /* 60% por defecto */
-    background:var(--card);
-    border-radius:16px;
-    overflow:hidden;
-    position:relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-  /* derecha: formulario */
-  #panel-form{
-    flex: 0 1 40%;
-    background:var(--card);
-    border-radius:16px;
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  }
-
-  /* ====== SLIDER ====== */
-  .slider{
-    height:100%;
-    position:relative;
-  }
-  .slides{
-    height:100%;
-    display:flex;
-    transition:transform .6s ease;
-  }
-  .slide{
-    min-width:100%;
-    height:60vh;         /* alto visible; se adapta */
-    display:grid;
-    place-items:center;
-    background:#0b1220;
-  }
-  .slide img{
-    width:100%; height:100%;
-    object-fit:cover;
-  }
-  .ctrl{
-    position:absolute; inset:auto 12px 12px 12px;
-    display:flex; justify-content:space-between; gap:12px;
-    pointer-events:none;
-  }
-  .btn{
-    pointer-events:auto;
-    border:0; border-radius:999px; padding:10px 14px;
-    background:rgba(17,24,39,.75); color:#fff; cursor:pointer;
-    transition:transform .1s ease, background .2s;
-  }
-  .btn:hover{ background:rgba(17,24,39,.95); transform:scale(1.04) }
-  .dots{
-    position:absolute; left:0; right:0; bottom:14px;
-    display:flex; gap:8px; justify-content:center;
-  }
-  .dot{
-    width:8px; height:8px; border-radius:50%;
-    background:rgba(255,255,255,.35); cursor:pointer; border:0;
-  }
-  .dot.active{ background:var(--accent) }
-
-  /* ====== FORM ====== */
-  h2{margin:0 0 6px; letter-spacing:.4px}
-  .hint{color:var(--muted); font-size:.9rem; margin-top:-6px}
-  label{font-size:.92rem; color:#cbd5e1}
-  .field{
-    display:flex; flex-direction:column; gap:6px;
-  }
-  input, textarea, select{
-    background:#0b1220; color:var(--text);
-    border:1px solid #1f2937; border-radius:10px;
-    padding:12px 14px; font-size:1rem; outline:none;
-    transition:border .15s ease, box-shadow .15s ease;
-  }
-  input:focus, textarea:focus, select:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(34,211,238,.15);
-  }
-  textarea{min-height:140px; resize:vertical}
-  .actions{display:flex; gap:12px; margin-top:8px}
-  .btn-primary{
-    background:var(--accent); color:#001017; font-weight:600;
-    border:0; padding:12px 18px; border-radius:12px; cursor:pointer;
-  }
-  .btn-outline{
-    background:transparent; color:var(--accent);
-    border:1px solid var(--accent); padding:12px 18px; border-radius:12px;
-    cursor:pointer;
-  }
-
-  /* ====== RESPONSIVE ====== */
-  /* TV o pantallas muy grandes: mitad/mitad */
-  @media (min-width: 1600px){
-    #panel-imagenes{ flex-basis:50% }
-    #panel-form{     flex-basis:50% }
-  }
-  /* Tablets / móviles: apilado */
-  @media (max-width: 900px){
-    .wrap{ flex-direction:column }
-    #panel-imagenes, #panel-form{ flex-basis:100% }
-    .slide{ height:40vh }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padel La Toma - Contacto</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header>
+    <h1>Padel La Toma</h1>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="articulo.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
 
-  <div class="wrap">
-    <!-- IZQUIERDA: imágenes -->
-    <section id="panel-imagenes" aria-label="Galería">
-      <div class="slider" id="slider">
-        <div class="slides">
-          <figure class="slide"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Montañas al amanecer"></figure>
-          <figure class="slide"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop" alt="Bosque y lago"></figure>
-          <figure class="slide"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop" alt="Ciudad nocturna"></figure>
-        </div>
+  <main>
+    <h2>Formulario de Contacto</h2>
+    <form id="formulario">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" maxlength="30" required>
 
-        <!-- controles -->
-        <div class="ctrl">
-          <button class="btn" data-prev aria-label="Anterior">⟵</button>
-          <button class="btn" data-next aria-label="Siguiente">⟶</button>
-        </div>
-        <div class="dots" aria-hidden="true"></div>
-      </div>
-    </section>
+      <label>Email:</label>
+      <input type="email" id="email" required>
 
-    <!-- DERECHA: formulario -->
-    <section id="panel-form" aria-label="Formulario de contacto">
-      <header>
-        <h2>Contacto</h2>
-        <p class="hint">Completa el formulario y te respondemos a la brevedad.</p>
-      </header>
+      <label>Teléfono:</label>
+      <input type="text" id="telefono" required>
 
-      <form id="contacto" novalidate>
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" placeholder="Tu nombre" required />
-        </div>
+      <label>Mensaje:</label>
+      <textarea id="mensaje" maxlength="200"></textarea>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
-        </div>
+      <button type="submit">Enviar</button>
+    </form>
 
-        <div class="field">
-          <label for="telefono">Teléfono</label>
-          <input id="telefono" name="telefono" placeholder="+54 9 ..." />
-        </div>
+    <div id="errores"></div>
+    <div id="resultado"></div>
+  </main>
 
-        <div class="field">
-          <label for="motivo">Motivo</label>
-          <select id="motivo" name="motivo">
-            <option value="consulta">Consulta</option>
-            <option value="presupuesto">Presupuesto</option>
-            <option value="soporte">Soporte</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Contanos en qué podemos ayudarte" required></textarea>
-        </div>
-
-        <div class="actions">
-          <button class="btn-primary" type="submit">Enviar</button>
-          <button class="btn-outline" type="reset">Limpiar</button>
-        </div>
-      </form>
-    </section>
-  </div>
-
-<script>
-  // ===== Mini slider =====
-  (function(){
-    const slider = document.getElementById('slider');
-    const track = slider.querySelector('.slides');
-    const slides = Array.from(track.children);
-    const btnPrev = slider.querySelector('[data-prev]');
-    const btnNext = slider.querySelector('[data-next]');
-    const dotsWrap = slider.querySelector('.dots');
-    let idx = 0, auto;
-
-    // dots
-    slides.forEach((_, i)=>{
-      const d = document.createElement('button');
-      d.className = 'dot' + (i===0?' active':'');
-      d.addEventListener('click', ()=>go(i));
-      dotsWrap.appendChild(d);
-    });
-
-    const dots = Array.from(dotsWrap.children);
-
-    function go(n){
-      idx = (n + slides.length) % slides.length;
-      track.style.transform = `translateX(-${idx*100}%)`;
-      dots.forEach((d,i)=>d.classList.toggle('active', i===idx));
-      restartAuto();
-    }
-    btnPrev.addEventListener('click', ()=>go(idx-1));
-    btnNext.addEventListener('click', ()=>go(idx+1));
-
-    function startAuto(){ auto = setInterval(()=>go(idx+1), 4000); }
-    function stopAuto(){ clearInterval(auto); }
-    function restartAuto(){ stopAuto(); startAuto(); }
-
-    slider.addEventListener('mouseenter', stopAuto);
-    slider.addEventListener('mouseleave', startAuto);
-    startAuto();
-  })();
-
-  // ===== Validación mínima del form (no recarga) =====
-  document.getElementById('contacto').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const form = e.currentTarget;
-    if(!form.checkValidity()){
-      form.reportValidity();
-      return;
-    }
-    alert('¡Gracias! Recibimos tu mensaje.');
-    form.reset();
-  });
-</script>
+  <footer>
+    <p>&copy; 2025 Padel La Toma</p>
+  </footer>
 </body>
 </html>
