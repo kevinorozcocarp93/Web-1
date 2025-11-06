@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Padel La Toma - Contacto</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Padel La Toma</h1>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="articulo.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Formulario de Contacto</h2>
+    <form id="formulario">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" maxlength="30" required>
+
+      <label>Email:</label>
+      <input type="email" id="email" required>
+
+      <label>Teléfono:</label>
+      <input type="text" id="telefono" required>
+
+      <label>Mensaje:</label>
+      <textarea id="mensaje" maxlength="200"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="errores"></div>
+    <div id="resultado"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Padel La Toma</p>
+  </footer>
+</body>
+</html>
